@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute relative</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 1rem;;
+            text-align: center;
+        }
+
+        .parent {
+            margin-left: 1rem;
+            background-color: rgb(146, 85, 202);
+            width: 90vw;
+            position: relative;
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+            /* background-color: lightcoral;
+           position: relative;
+           top:30px;
+           left:30px; */
+
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+            position: absolute;
+            top:0px;
+            right: 30px;
+        }
+
+        .anotherdiv{
+            background-color: red;
+            padding: 40px;
+            height: 50%;
+            width: 50%;
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Position - Absolute, Relative </h2>
+
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="anotherdiv">
+        <div class="box box-3">3</div>
+        </div>
+        <div class="box box-4">4</div>
+
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- orginal pos -> top left corner of the elem -->
+<!-- # Relative 
+* Browser treats the element is if it still occupies it's original pos
+* Without top, bottom, left, right : element stays at org pos
+    * top : pushes element down from it's original pos
+    * left : pushed element right from it's original pos
+    * right : pushes element left from it's original pos
+    * bottom : pushes element up from it's original pos -->
+
+<!-- # Absolute
+    Relative to the first positioned ancestor
+* Browser removes it from the current flow and next element to it will take it's place
+* top, left, right, bottom
+* Default
+* top and left -> top left corner
+* bottom -> bottom part of the page
+* right -> right part of the page -->

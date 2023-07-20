@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .parent{
+            color: blueviolet;
+        }
+
+        .my-class{
+            color: gray;
+        }
+
+        p#my-id{
+            color: blueviolet;
+        }
+
+        .my-class#my-id{
+            color: pink;
+        }
+
+
+        p.my-class{
+          color: blue;  
+        }
+        
+
+        p.my-class.another-class.another-class2{
+            color: yellow;
+        }
+
+    
+         p#my-id.my-class{
+            color: chocolate;
+        }
+
+
+         #my-id.my-class.another-class2.another-class{
+            color: lawngreen;
+        }
+
+   p:hover{
+            color: hotpink;
+        }
+        
+        p{
+            color: red !important;
+        }
+
+        p:hover{
+            color: hotpink;
+        }
+
+        *{
+            color: orange;
+        }
+
+
+        p#my-id{
+            color: aqua;
+        }
+
+        p.my-class{
+            color: gold;
+        }
+
+        p.another-class{
+            color: blue;
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <div  class="parent">
+
+        <p  class="my-class another-class another-class2" id="my-id"> This is a paragraph </p>
+
+    </div>
+    
+</body>
+</html>
