@@ -32,7 +32,6 @@ Function.prototype.customBind=function(requiredObject, ...args1){
     return function(...args2){
         functionToExecute.call(requiredObject, ...args1, ...args2);
     }
-
 }
 
 
@@ -56,10 +55,20 @@ const child = {
 parent.addHealth(10,10);
 // parent.addHealth.customCall(child,5,5);
 // parent.addHealth.customApply(child,[13,3]);
-
 const myFn = parent.addHealth.customBind(child,5);
 myFn(10);
 
 console.log(child);
 
 
+
+
+function add(){
+
+}
+
+console.dir(add);
+
+console.log(add.toLocaleString());
+
+console.dir(add.__proto__);

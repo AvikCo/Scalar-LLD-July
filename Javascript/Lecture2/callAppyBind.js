@@ -79,22 +79,7 @@ const myObj = {
 // //10000 years
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // importantFn("Utkarsh", "Rahul", "Jay");
-
-
-
 
 
 
