@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            height: 100px;
+            width: 100px;
+            background-color: lightskyblue;
+            box-sizing: border-box;
+            /* border-top: 5px; */
+            border-style: solid;
+            border-color: red;
+        }
+        .inline {
+            height: 500px; /*Height and width will not be applied to inline display type*/
+            width: 500px;
+            margin:5px 10px; /* top and bottom margins will not be applied as its an inline element*/
+            border: 3px solid green;
+             padding: 10px; /*padding can be applied to inline element */
+        }
+        .inlineBlock{
+            display: inline-block;
+            width: 250px;
+            height: 300px;
+            margin-top: 10px;
+            border-top: 2px;
+            border-color: red;
+            border-style: solid;
+            /* border: 3px solid red; */
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+
+    </div>
+    <!--span in an inline element-->
+    <span class="inline"> 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tenetur consequatur illum ipsa debitis ullam officia. Fuga pariatur perferendis nemo voluptatum, odit illo. Dolorem neque sed magnam inventore quis facilis.
+    </span>
+    <span class="inlineBlock"> 
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi fuga quia ut? Totam atque quos velit dolor voluptatem labore distinctio. Velit beatae, architecto dicta non ad dolores. Delectus, repellendus ullam.
+    </span>
+    <span class="inline"> 
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, magni nostrum est voluptatibus veritatis vitae dignissimos fuga repudiandae dicta amet quod autem corrupti, minus iure?
+    </span>
+
+</body>
+</html>

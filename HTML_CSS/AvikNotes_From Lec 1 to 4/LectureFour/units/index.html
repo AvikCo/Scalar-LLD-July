@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        .px, .rem, .vh-vw, .parent{
+            margin-bottom: 7px;
+        }
+        html{
+            font-size: 10px;
+        }
+        /*This is absolute and will change relative to anything*/
+        .px{
+            background-color: lawngreen;
+            font-size: 20px;
+        }
+        /*rem is relative unit it will change relative to the size defined in html tag, by default html font-size is 16px
+          its used to increase responsiveness of a page. if only html font-size is changed by media query then relative rem sizes will reflect in other areas
+          rem is mostly used for font sizes*/
+        .rem{
+            font-size: 2rem; /*it's 10 * 2 = 20px*/
+            background-color: skyblue;
+        }
+        /*Viewport height and Viewport Width is relative to the current browser screen height and width, if 20vh is given for a box height it means the box should occupy 20% of available screen height.
+        Same applies with vw
+        */
+        .vh-vw{
+            height: 20vh;
+            width: 50vw;
+            background-color:bisque ;
+        }
+        .parent{
+            background-color: aqua;
+            height: 10rem;
+        }
+        /*% is always relative to parent. Idealy Parent should be defined*/
+        .child{
+            height: 50%;
+            width: 50%;
+            background-color: brown;
+        }
+        .em{
+            font-size: 3rem;
+            line-height: 1.5em;
+            background-color: lightgreen;
+            padding:5px;
+        }
+    </Style>
+</head>
+<body>
+    <div class="px"> Pixel Unit</div>
+    <div class="rem"> Rem Unit</div>
+    <div class="vh-vw">VH-Vw unit</div>\
+    <div class="parent">
+        PARENT
+        <div class="child">
+            ICHILD
+        </div>
+    </div>
+    <div class="em">
+        Hello this is the text which have font size in rem but the line-height is in em. Can you spot the changes while resizing the window?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae a blanditiis fugit sit, perspiciatis id accusantium. Fugiat vitae architecto velit cupiditate numquam qui inventore quam.
+    </div>
+</body>
+</html>

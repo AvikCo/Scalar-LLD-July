@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .parent{
+            padding: 1.2rem;
+            height: 70vh;
+            width: 150vh;
+            background-color: violet;
+            border: 3px solid black;
+            position: relative; /*This relative property does not do anything stand alone
+            but as position property is mentioned the 3rd box positioned it self relative to this*/
+        }
+        .box{
+            margin: 6px;
+            height: 7rem;
+            width: 7rem;
+            border: 3px dashed black;
+            text-align: center;
+            color: red;
+        }
+        .one{
+            background-color: lightblue;
+        }
+        /*
+         > position: relative has no meaning without one or more top, bottom right left properties
+         > relative positioning is relative to the original position in a normal flow.
+         >
+         */ 
+        .two{
+            background-color: lawngreen;
+            position: relative;
+            top:20px;
+            left: 20px;
+        }
+        /*
+        > position: absolute removes the element from the original flow
+        > same as relative position, without top, bottom , right or left property the absolute 
+        > Absolute property element is relative to it closet positioned parent
+        > nearest parent is parent box and three box has positioned itself relative to that
+        */
+        .three{
+            background-color: orange;
+            position: absolute;
+            right: 30px;
+            top:20px;
+        }
+        .four{
+            background-color: forestgreen;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h2>Positioning Absoule, Relative</h2>
+        <div class="box one">1</div>
+        <div class="box two">2 Position: relative</div>
+        <div class="box three">3</div>
+        <div class="box four">4</div>
+    </div>
+</body>
+</html>

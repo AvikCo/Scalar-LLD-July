@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*specificity is 10*/
+         .my-class{
+            color: gray;
+         }
+         /*specificity is 100*/
+         #my-id{
+            color: greenyellow;
+         }
+         /*specificity is 1*/
+         p{
+            color: red;
+         }
+         /*specificity is 10 + 1 = 11*/
+         p.my-class{
+            color:seagreen;
+         }
+         /*specificity is 10 + 100 = 110*/   
+         .my-class#my-id{
+            color: darkblue;
+         }
+         /*specificity is 1 + 100 = 101*/
+         p#my-id{
+            color: blueviolet;
+         }
+         /*specificity is 0*/
+         *{
+            color: blue;
+         }
+         /*specificity is 1 + 10 + 10 + 10 = 31*/
+         p.my-class.second-class.third-class{
+            color: black;
+
+         }
+         /*specificity is 100 + 10 + 10 + 10 = 130*/
+         #my-id.my-class.second-class.third-class{
+            color:lawngreen;
+         }
+         /*specificity is 1 + 10000*/
+         p{
+            color: red !important;
+         }
+/*Which font colour the CSS will pick out of all the given options? */
+    </style>
+</head>
+<body>
+    <div style="color: red" class="parent">
+        <!--specificity is 1000-->
+        <p style="color: gold" class="my-class second-class third-class" id="my-id">
+            THis is a paragraph
+        </p>
+    </div>
+    
+</body>
+</html>

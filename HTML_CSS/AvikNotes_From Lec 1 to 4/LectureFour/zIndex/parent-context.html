@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .parent{
+            margin-left: 1rem;
+            /* height: 70vh;
+            width: 150vh; */
+            background-color: violet;
+            /* border: 3px solid black; */
+        }
+        .parent2{
+            margin-left: 1rem;
+            background-color: rgb(218, 235, 163);
+        }
+        .box{
+            margin: 6px;
+            height: 7rem;
+            width: 7rem;
+            border: 3px dashed black;
+            text-align: center;
+            color: red;
+        }
+        /*
+            > if both one and two box has same z-index and both are positoined then box 2 will be on the front of box 1 as z-index has been applied on box 2 after box 1.
+        */
+        .one{
+            background-color: lightblue;
+        }
+      
+        .two{
+            background-color: lawngreen;
+            position: fixed;
+        }
+        .three{
+            background-color: orange;
+        }
+        .four{
+            background-color: forestgreen;
+        }
+      
+        /* start here*/
+        .two{
+            position: fixed;
+            z-index: 4;
+        }
+        /*
+            > parent2's box one's z index is lower than box 2 on parent 2's box one stays above parent one' box 1 as parent2 has higher z-index.
+            > lowering z-index of a child from the parent doesn't make any sense. 
+        */
+        .parent2>.one{
+            position: relative;
+            z-index: 1;
+        }
+        .parent2{
+            position: relative;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, perspiciatis officia incidunt quidem molestiae eaque quod, beatae doloribus sed provident corrupti, placeat ipsa facilis deserunt a tempora cum deleniti enim!</p>
+    <div class="parent">
+        <div class="box one">1</div>
+        <div class="box two">2</div>
+        <div class="box three">3</div>
+        <div class="box four">4</div>
+    </div>
+    <div class="parent2">
+        <div class="box one">Parent2 1</div>
+        <div class="box two">Parent2 2</div>
+        <div class="box three">Parent2 3</div>
+        <div class="box four">Parent2 4</div>
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente provident ipsa vel mollitia ad at, natus ab perferendis quam veniam cupiditate harum corrupti nemo alias a voluptas facere eligendi quo aliquid veritatis aperiam. Eos incidunt quasi delectus ducimus! Officia cum ex id in quidem, voluptatem nam eum exercitationem repellat omnis?
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil officia vero cumque voluptates quisquam fugiat sint dolor necessitatibus reprehenderit atque distinctio nobis, ipsa similique magnam assumenda beatae, dicta nam rerum asperiores? Exercitationem suscipit laborum, voluptates ex asperiores laudantium voluptas quasi adipisci repellendus veniam consequatur, ratione quisquam corrupti doloremque pariatur eius laboriosam. Mollitia praesentium sequi debitis similique fugiat error officia explicabo, magni suscipit omnis? Quibusdam unde voluptatem asperiores dolore obcaecati ad fugit, sed perferendis odit, delectus optio placeat iusto commodi illum minima doloremque numquam, architecto error. Tempore omnis laboriosam at tempora?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero tenetur quaerat esse beatae molestiae itaque aperiam alias. Exercitationem at ullam minus culpa eveniet iste deleniti, nemo voluptates vitae, assumenda dolorum incidunt ab optio quos. Officia delectus quae labore, minima iusto impedit cum voluptas repellendus quas nostrum obcaecati earum ratione placeat ab sed eveniet facilis saepe a exercitationem? Officiis sint blanditiis cupiditate doloremque eius, maxime repellendus expedita laborum assumenda voluptas, nulla debitis, consequuntur delectus accusantium? Eligendi necessitatibus explicabo omnis eum, labore suscipit voluptatem deleniti velit eos! Animi temporibus nesciunt inventore, dolorem quidem officia nam, a, eaque et neque corrupti doloribus quaerat accusamus error quas ab tempora! Nihil a eveniet distinctio itaque impedit perspiciatis. Qui error dignissimos quis corrupti atque omnis, quae rerum sed excepturi voluptate cum laudantium itaque quia unde! Possimus optio tempora distinctio numquam accusamus nihil sit velit nam quo? Praesentium maiores error minus alias asperiores voluptate consectetur aliquam numquam sunt magnam repudiandae iusto recusandae veritatis similique, accusamus laboriosam hic illum est impedit. Libero, nam? Id cumque recusandae quis odit sunt vel modi porro officia voluptate consectetur eius eos assumenda amet nisi aut iste culpa corporis eveniet officiis cupiditate, eligendi sequi magnam! Minima nulla, accusantium nisi molestiae provident nesciunt ipsum!
+    </p>
+</body>
+</html>

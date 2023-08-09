@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Position</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding:0;
+            font-family: sans-serif;
+            
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .parent {
+            width: 50vw;
+            /* background-color: rgb(146, 85, 202);*/
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(https://cdn.pixabay.com/photo/2013/07/21/13/00/rose-165819_640.jpg);
+        }
+        /*
+            > Fixed position is like sticking a picture on a wall it positioned relative to the body. 
+            > when  you apply position fixed then the width of the element is shrank to its content. (try commenting position fixed and see the effect)
+            > top/bottom/left/right should be applied while applying position fixed, without the these properties element stays on the position where it was before applying position fixed. 
+        */
+        nav{
+            background-color: black;
+            color:white;
+            position: fixed;
+             top:0px;
+            left:0px; 
+            width: 100vw;
+        }
+        .box {
+            width:  12rem;
+            height: 12rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+        .box-1 {
+            background-color: lightblue;
+        }
+        .box-2{
+            background-color: lightcoral;
+        }
+        .box-3{
+            background-color: lightgreen;
+        }
+        .box-4{
+            background-color: lightsalmon;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Position:Fixed</h2>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Signup</li>
+        </ul>
+    </nav>
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+    <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae molestias voluptas ullam fuga illum? Earum ratione accusantium recusandae saepe, nisi nesciunt at, quis omnis iusto consectetur totam! Non quia quam recusandae praesentium repellat, veritatis at rerum debitis eos quae minima aliquam et quasi ab maiores eum? Vero rem, omnis dolorum magnam illo odit eos! Possimus nesciunt at architecto voluptatum dolorum. Consequuntur ullam voluptatem aliquid sit asperiores debitis mollitia maiores! Minima earum ab culpa ipsam fugit explicabo at voluptas odio reprehenderit eius molestiae quo, error iusto obcaecati cumque voluptatibus illum a repellendus, deserunt eveniet quod dicta animi assumenda. Blanditiis alias harum quos soluta ea nemo perspiciatis amet, neque beatae molestiae, recusandae aspernatur reprehenderit cumque quo quia vitae rerum pariatur et? Est dolorum voluptate voluptatibus reiciendis, iure quaerat facilis aperiam quasi quidem sapiente ratione? Nemo officiis perspiciatis minima iste quisquam dolorum, repudiandae voluptatibus ab amet labore voluptas fuga cupiditate enim numquam. Repudiandae voluptatibus ipsum qui rerum impedit accusamus consectetur et vero! Laboriosam ipsa quo, nesciunt laudantium neque doloribus cupiditate ipsam sit similique fugiat ut doloremque magnam animi quaerat quibusdam ex nihil sunt dolor iste non, temporibus nostrum. Consequuntur adipisci illo quasi enim sint fuga magni, unde possimus. Delectus eaque accusantium pariatur voluptate iste vitae, quibusdam adipisci veniam libero minus illo aperiam velit voluptatibus, quae quam placeat earum eligendi provident necessitatibus ipsa! Cumque itaque quas quod voluptates perspiciatis? Voluptate dolore nulla corrupti ipsa cum quas eum, ad nisi saepe, voluptatibus quam, laborum minima blanditiis. Laudantium reprehenderit, cumque blanditiis pariatur modi similique veritatis voluptas eum quam aut assumenda quibusdam! Harum aspernatur fugit veritatis expedita, ullam quos temporibus sapiente accusamus dolorum adipisci porro quia doloribus sint possimus amet! Cupiditate neque modi eligendi, saepe quo molestias blanditiis cumque quaerat deserunt debitis illo asperiores, incidunt numquam doloribus beatae itaque magni laboriosam iste id! Fugit amet optio hic!
+    </p>
+    
+</body>
+</html>

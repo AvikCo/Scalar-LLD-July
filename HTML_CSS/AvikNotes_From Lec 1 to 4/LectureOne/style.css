@@ -1,0 +1,10 @@
+.m1.m2{
+    background-color: green;
+}
+p.m1{
+    color: blue
+}
+a[target] {
+    background-color: lightblue;
+    color: red;
+}

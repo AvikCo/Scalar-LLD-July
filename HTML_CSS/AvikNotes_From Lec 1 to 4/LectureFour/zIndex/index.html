@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .parent{
+            padding: 1.2rem;
+            height: 70vh;
+            width: 150vh;
+            background-color: violet;
+            border: 3px solid black;
+        }
+        .box{
+            margin: 6px;
+            height: 7rem;
+            width: 7rem;
+            border: 3px dashed black;
+            text-align: center;
+            color: red;
+        }
+        /*
+            > if both one and two box has same z-index and both are positoined then box 2 will be on the front of box 1 as z-index has been applied on box 2 after box 1.
+        */
+        .one{
+            background-color: lightblue;
+            position: relative;
+            top: 6rem;  
+            z-index: 4;
+        }
+        /*
+            > without position property the z-index won't work.
+            > the higher z-index the closer it is to screen.
+            > By default the positioned element has higher z-index as comppared to non positioned element.
+        */
+        .two{
+            background-color: lawngreen;
+            position: relative;   
+            z-index: 4;
+        }
+        .three{
+            background-color: orange;
+        }
+        .four{
+            background-color: forestgreen;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h2>Z Index</h2>
+        <div class="box one">1</div>
+        <div class="box two">2</div>
+        <div class="box three">3</div>
+        <div class="box four">4</div>
+    </div>
+</body>
+</html>
