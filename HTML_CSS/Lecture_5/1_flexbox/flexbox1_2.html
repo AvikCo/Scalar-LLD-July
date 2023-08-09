@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .parent {
+        height: 30rem;
+        width: 70vw;
+        background-color: rgb(176, 141, 211);
+    }
+
+    .child {
+        color: rgb(179, 40, 40);
+        font-size: 1rem;
+        background-color: lightcoral;
+        font-weight: bold;
+        border: dashed;
+        font-family: sans-serif;
+    }
+
+    /******************template starts from here ************/
+    .parent {
+        display: flex;
+          /*put the items on start of the main axis */
+         justify-content: flex-start; 
+
+         /*put the items on end of the main axis*/
+        /* justify-content: flex-end;  */
+        
+        /*put the items at the center of the main axis*/
+        /* justify-content: center;  */
+        
+        /*no space on flex start and flex ends*/
+        /* justify-content: space-between;  */
+        
+        /*put space around flex items*/
+        /* justify-content: space-around;  */
+        
+        /* space will be same between all flex itmes along with flex start and flex end*/
+        /* justify-content: space-evenly; */
+        
+         /*using flex wrap will not compromise of the height width of the flex items when browser size is minimised. Responsive*/
+         flex-wrap: wrap;
+
+
+
+        /* interchange the x axis as cross axis and y axis as main axis*/
+        flex-direction: column; 
+
+
+
+
+        /*align items positoin flex items on cross axis*/
+        /* align-items: flex-start; */
+        align-items: flex-end;
+
+        /*across the cross axis it should be center*/
+        /* align-items: center; */
+
+        /*gap will create gap between flex items*/
+        gap: 1rem;
+
+        /*streat would stretch the hight and take full h*/
+        /* align-items: stretch; */
+        
+    
+     }
+    /*******************************/
+    .child {
+        width: 9rem;
+        height: 6rem;
+        max-height: 8rem;
+    }
+
+</style>
+
+<body>
+    <h2>Flexbox Example</h2>
+    <h3>Without Height and width</h3>
+  
+    <div class="parent">
+        <div class="child one">I am child special
+            and i am being
+        </div>
+        <div class="child two ">I am child</div>
+        <div class="child three"> I am child</div>
+    </div>
+    <br>
+ 
+
+
+
+</body>
+
+</html>
+
+
+
+<!--  horizonatal alignment : give some with children
+and have some space 
+width that you give will be adjusted 
+-->
+<!-- 
+
+if not height given to flex items : they take full container height
+if no width given, flex items adjust themselves to cover the full width of the container
+* -->
