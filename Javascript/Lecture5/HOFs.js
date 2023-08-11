@@ -293,3 +293,16 @@ let arr=[4,5,2,45,5,13,5,3,5,3,56,3,56];
 // }, {});
 
 // console.log(reducedValue);
+
+
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// // achieving what you achieved via filter also using reduce
+
+// const filteredArr = arr.reduce((acc, value) => {
+// if (value & 1) acc.push(value);
+// return acc;
+// }, []); 
+
+// console.log(filteredArr);

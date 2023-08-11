@@ -63,3 +63,14 @@
 //     }
 // }
 
+// Below is the implementation of filter using reduce. Is this right to do this way 
+
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const filteredArr = arr.reduce((acc, value) => {
+if (value & 1) acc.push(value);
+return acc;
+}, []); 
+
+console.log(filteredArr);
