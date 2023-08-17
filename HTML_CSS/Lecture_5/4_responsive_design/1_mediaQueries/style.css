@@ -1,0 +1,29 @@
+/*range is 1501px - 2000px*/ 
+/*if I add te below style at the end of the script then this style will override the below styles
+
+*/
+@media only Screen and (max-width: 2000px){
+    body{
+        background-color: hotpink;
+    }
+}
+/*range is 1001px - 1500px*/
+@media only Screen and (max-width: 1500px){
+    body{
+        background-color: lightblue;
+    }
+}
+/*range is 701px - 1000px*/
+@media only Screen and (max-width: 1000px){
+    body{
+        background-color: lime;
+    }
+}
+/*range is 0px - 700px*/
+@media only Screen and (max-width: 700px){
+    body{
+        background-color: lightsalmon;
+    }
+}
+
+

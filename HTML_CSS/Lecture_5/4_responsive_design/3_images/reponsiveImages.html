@@ -13,9 +13,15 @@
     }
 
     img{
-  
+    max-width: 100%; /*it will not let overflow the image
+    it is a very good property to control overflow*/
     width: 30rem;
     height:40rem;
+    object-fit: cover;/*it will try to cover the entire dimention, and yet maintain the aspect ratio*/
+    /*object-fit: contain;/*ths image will keep the original aspect ratio(the propotion of width to height) but it will be resize to fit the given width*/
+    /*object-fit: fill; /*Default property will fill the image */
+    object-position: top;
+    object-position: top left; /*it will work it will push the image to top of bottom of the */
     }
 </style>
 <body>
