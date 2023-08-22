@@ -72,3 +72,6 @@
 
 //deep freeze
 
+
+console.log(Object.prototype);
+console.log(Object.__proto__);

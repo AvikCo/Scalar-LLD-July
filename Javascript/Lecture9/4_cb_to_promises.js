@@ -28,3 +28,6 @@ promiseBasedReadFile("./f1.txt")
 .catch((err)=>{
     console.log("promise is rejected with err "+err);
 })
+
+
+

@@ -77,3 +77,29 @@
 
 // const person= new SuperHuman("Utkarsh", 29);
 // console.log(person.sayHI());
+
+
+
+// console.log(Object.prototype);
+// console.log(Object.__proto__ === Function.prototype);
+
+
+function x(){
+
+}
+
+// console.log(x.__proto__ === Function.prototype);
+
+
+// x.prototype.sayHi="hrffr";
+
+// console.dir(x);
+
+let obj1 = Object.create(null); 
+obj1.test="pass";
+let obj2 = Object.create(obj1);
+ obj2.age = 49; 
+ console.log( obj2); 
+
+
+//  typeof obj2 is object, but its prototype doesn't have Object prototype. Can you explain this

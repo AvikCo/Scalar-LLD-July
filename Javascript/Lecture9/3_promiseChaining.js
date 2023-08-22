@@ -41,6 +41,13 @@
 
 
 
+// Promise can either be resolved or rejected once in it’s
+// lifetime
+// Callbacks of promises goes to a separate queue
+// known as microtask queue and it has higher
+// priority then normal cab queue
+
+
 
 
 // let fs = require("fs");
