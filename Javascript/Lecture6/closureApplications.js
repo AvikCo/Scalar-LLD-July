@@ -25,22 +25,22 @@ function counter(args) {
 }
 
 
-// console.log(counter(0)); // print -> 1
-// console.log(counter()(0)); // print ->2
-// console.log(counter()()(0)); // print ->3 
-// console.log(counter()()()(0)); // print ->4
+console.log(counter(0)); // print -> 1
+console.log(counter()(0)); // print ->2
+console.log(counter()()(0)); // print ->3 
+console.log(counter()()()(0)); // print ->4
 
 // Homework 
 
-// function sum() {
+function sum() {
 
-// }
+}
 
-// sum(3)(4)();  // 7
+sum(3)(4)();  // 7
 
-// sum(3)(7)(8)(); //18 
+sum(3)(7)(8)(); //18 
 
-// sum(1)(7)(8)(5)(); // 21 
+sum(1)(7)(8)(5)(); // 21 
 
 
 

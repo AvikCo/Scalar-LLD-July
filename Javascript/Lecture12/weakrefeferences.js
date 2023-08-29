@@ -18,10 +18,10 @@ jhon = null;
 console.log("John 17", arr[0]);
 
 
-let a = {}; 
-let b = a;
- a = null; 
- console.log(b);
+// let a = {}; 
+// let b = a;
+//  a = null; 
+//  console.log(b);
 
 
  /****

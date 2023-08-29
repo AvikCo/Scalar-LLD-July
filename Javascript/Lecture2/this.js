@@ -1,196 +1,196 @@
 
-// console.log(this);
+console.log(this);
 
 
-// var person={
-//     name:"Utkarsh"
-// }
+var person={
+    name:"Utkarsh"
+}
 
-// console.log(person);
-// console.log(window.person);
-// console.log(this.person);
+console.log(person);
+console.log(window.person);
+console.log(this.person);
 
 
-// function sayHi(){
-//     console.log(this);
-// }
+function sayHi(){
+    console.log(this);
+}
 
-//sayHi();
-//window.sayHi();
+sayHi();
+window.sayHi();
 
 
 
-// var person = {
+var person = {
 
-//     name:"Utkarsh",
-//     age:29,
-//     sayHi:function(){
-//         console.log(this);
-//         return `Ny name is ${this.name} and my age is ${this.age}`
-//     }
-// }
+    name:"Utkarsh",
+    age:29,
+    sayHi:function(){
+        console.log(this);
+        return `Ny name is ${this.name} and my age is ${this.age}`
+    }
+}
 
-// console.log(person.sayHi());
+console.log(person.sayHi());
 
 
-// var person = {
+var person = {
 
-//     name:"Utkarsh",
-//     age:29,
-//     sayHi:function(){
-//         console.log(this);
+    name:"Utkarsh",
+    age:29,
+    sayHi:function(){
+        console.log(this);
 
-//         function child(){
-//         console.log(this);
-//         }
+        function child(){
+        console.log(this);
+        }
 
-//         child();
-//     }
-// }
+        child();
+    }
+}
 
-// person.sayHi();
+person.sayHi();
 
 
 
 
-// function Person(name, age){
-//    // this={}
-//    this.name=name;
-//    this.age=age;
-//    //return this;
-// }
+function Person(name, age){
+   // this={}
+   this.name=name;
+   this.age=age;
+   //return this;
+}
 
 
-// const person1=  new Person("Utkarsh",29);
+const person1=  new Person("Utkarsh",29);
 
-// console.log(person1);
+console.log(person1);
 
 
 
-// function logThis(){ 
-//     console.log(this);
-// }
+function logThis(){ 
+    console.log(this);
+}
 
-// const myObj = { 
-//     logThis:logThis
-// } 
+const myObj = { 
+    logThis:logThis
+} 
 
-// myObj.logThis()
+myObj.logThis()
 
 
-// function logThis(){ 
-//     console.log(this);
-// }
-// const myObj = { 
-//     foo: function(){
-//         logThis(); 
-//     }
-// } 
+function logThis(){ 
+    console.log(this);
+}
+const myObj = { 
+    foo: function(){
+        logThis(); 
+    }
+} 
 
-// myObj.foo()
+myObj.foo()
 
 
-// const add=(a,b)=>{
-//     console.log(this);
-//  return a+b;
-// }
+const add=(a,b)=>{
+    console.log(this);
+ return a+b;
+}
 
-// add(1,2);
+add(1,2);
 
+var person = {
+    name:"Utkarsh",
+    age:29,
+    sayHi:()=>{
+        console.log(this);
+    }
+}
 
-// var person = {
-//     name:"Utkarsh",
-//     age:29,
-//     sayHi:()=>{
-//         console.log(this);
-//     }
-// }
+person.sayHi();
 
-// person.sayHi();
 
+var person = {
 
-// var person = {
+    name:"Utkarsh",
+    age:29,
+    sayHi:function(){
+        console.log(this);
 
-//     name:"Utkarsh",
-//     age:29,
-//     sayHi:function(){
-//         console.log(this);
+        var child=()=>{
+        console.log(this);
+        }
 
-//         var child=()=>{
-//         console.log(this);
-//         }
+        child();
+    }
+}
 
-//         child();
-//     }
-// }
+person.sayHi();
 
-// person.sayHi();
 
+const logThis = () => { 
+    console.log(this);
+}
 
-// const logThis = () => { 
-//     console.log(this);
-// }
+const myObj = { 
+    foo: logThis
+} 
 
-// const myObj = { 
-//     foo: logThis
-// } 
+myObj.foo()
 
-// myObj.foo()
 
+const a = function () {
+  console.log('a', this)
 
-// const a = function () {
-//   console.log('a', this)
+  const b = function () {
+    console.log('b', this)
 
-//   const b = function () {
-//     console.log('b', this)
+    const c = {
+      h1: function () {
+        console.log('c', this)
+      }
+    }
 
-//     const c = {
-//       h1: function () {
-//         console.log('c', this)
-//       }
-//     }
+    c.h1()
+  }
+  b()
+}
 
-//     c.h1()
-//   }
-//   b()
-// }
 
+a()
 
-// a()
 
 
 
+const obj = {
 
-// const obj = {
+  name: 'Billy',
 
-//   name: 'Billy',
+  sing() {
+    console.log('a', this);
+    var anotherFunc = function () {
+      console.log('b', this)
+    }
+    anotherFunc()
+  }
+}
 
-//   sing() {
-//     console.log('a', this);
-//     var anotherFunc = function () {
-//       console.log('b', this)
-//     }
-//     anotherFunc()
-//   }
-// }
+obj.sing()
 
-// obj.sing()
 
+const obj1 = {
 
-// const obj1 = {
+  name: 'Billy',
 
-//   name: 'Billy',
+  sing() {
+    console.log('a', this);
+    var anotherFunc = () => {
+      console.log('b', this)
+    }
+    anotherFunc()
+  }
+}
 
-//   sing() {
-//     console.log('a', this);
-//     var anotherFunc = () => {
-//       console.log('b', this)
-//     }
-//     anotherFunc()
-//   }
-// }
+obj1.sing()
 
-// obj1.sing()
 
 
 
@@ -198,41 +198,40 @@
 
 
 
+const obj2 = {
 
-// const obj2 = {
+  name: 'Billy',
 
-//   name: 'Billy',
+  sing() {
+    console.log('a', this);
+    var self = this;
+    var anotherFunc = function () {
+      console.log('b', self)
+    }
+    anotherFunc()
+  }
+}
 
-//   sing() {
-//     console.log('a', this);
-//     var self = this;
-//     var anotherFunc = function () {
-//       console.log('b', self)
-//     }
-//     anotherFunc()
-//   }
-// }
+obj2.sing()
 
-// obj2.sing()
 
+var b = {
+  name: 'jay',
+  say() { console.log(this) }
+}
 
-// var b = {
-//   name: 'jay',
-//   say() { console.log(this) }
-// }
+var c = {
+  name: 'jay',
+  say() { return function () { console.log(this) } }
+}
 
-// var c = {
-//   name: 'jay',
-//   say() { return function () { console.log(this) } }
-// }
+var d = {
+  name: 'jay',
+  say() { 
+    return () => console.log(this) 
+}
+}
 
-// var d = {
-//   name: 'jay',
-//   say() { 
-//     return () => console.log(this) 
-// }
-// }
-
-// b.say()
-// c.say()()
-// d.say()()  
+b.say()
+c.say()()
+d.say()()  
