@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Event Demo</title>
+</head>
+
+<body>
+    <!-- An event is an action that occurs in the web browser
+     which the web browser feedbacks to you so that you can respond to it. -->
+
+
+    <div id="container">
+        <button id='btn'>Click Me!</button>
+    </div>
+
+    <h1>fullscreenchange event example</h1>
+    <div id="fullscreen-div">
+        <button id="toggle-fullscreen">Toggle Fullscreen Mode</button>
+    </div>
+
+    <script>
+        let btn = document.querySelector('#btn');
+
+
+        function display() {
+            alert('It was clicked!');
+        }
+
+        document.body.addEventListener("fullscreenchange", () => {
+
+            console.log("Full Screen Done")
+         });
+
+
+        btn.addEventListener('click', display);
+
+                    function fullscreenchanged(event) {
+                        // document.fullscreenElement will point to the element that
+                        // is in fullscreen mode if there is one. If not, the value
+                        // of the property is null.
+                        if (document.fullscreenElement) {
+                            console.log(
+                                `Element: ${document.fullscreenElement.id} entered fullscreen mode.`,
+                            );
+                        } else {
+                            console.log("Leaving fullscreen mode.");
+                        }
+                    }
+         document
+                .getElementById("toggle-fullscreen")
+                .addEventListener("click", (event) => {
+                    if (document.fullscreenElement) {
+                        // exitFullscreen is only available on the Document object.
+                        document.exitFullscreen();
+                    } else {
+                        el.requestFullscreen();
+                    }
+                });           
+
+    const el = document.getElementById("fullscreen-div");
+
+    el.addEventListener("fullscreenchange", fullscreenchanged);
+
+    </script>
+</body>
