@@ -1,0 +1,90 @@
+<!-- Q : Create a list and append 100000 number of items in that list  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Fragments 
+
+        The DocumentFragment interface represents a minimal document object that has no parent.
+
+        It is used as a lightweight version of Document that stores 
+        a segment of a document structure comprised of nodes just like a standard document. 
+
+         the document fragment is in memory and not part of the main DOM tree
+
+         Changes made to the fragment don't affect the document.
+
+        <React.Fragment>
+        <React.Fragment/>
+        
+        <>
+        -
+        -
+        -
+        </>
+    
+    -->
+    
+
+    <h1> List Item </h1>
+    <ul id="listContainer"> </ul>
+
+
+    <script>
+        let ul = document.querySelector("#listContainer");
+
+        // for(let i=0;i<100000;i++){
+
+        //     let newLi = document.createElement("li");
+        //     newLi.textContent = `I am a list item ${i+1}`;
+            
+        //     // 100k -> rendering html page
+        //     ul.appendChild(newLi);
+        // }
+
+
+        //smarter way of doing it
+
+        let fragment = document.createDocumentFragment();
+
+        // for(let i=0;i<10;i++){
+        //     let newLi = document.createElement("li");
+        //     newLi.textContent = `I am a list item ${i+1}`;
+
+        //     fragment.appendChild(newLi);
+        // }
+
+        //  console.log(fragment.nodeType === Node.DOCUMENT_FRAGMENT_NODE);
+        // console.dir(fragment);
+
+
+
+
+
+    /*
+      using a DocumentFragment is slower than appending to the document in a loop 
+    */
+
+    //BAD example for using fragments 
+
+        // const fruits = ["Apple", "Orange", "Banana", "Melon"];
+
+
+        //     for (const fruit of fruits) {
+        //         const li = document.createElement("li");
+        //         li.textContent = fruit;
+        //         fragment.append(li);
+        //     }
+
+        // ul.appendChild(fragment);
+
+
+    </script>
+</body>
+</html>
