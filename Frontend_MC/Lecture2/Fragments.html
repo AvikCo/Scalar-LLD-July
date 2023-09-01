@@ -52,19 +52,22 @@
         //smarter way of doing it
 
         let fragment = document.createDocumentFragment();
+        let div = document.createElement("div");
 
-        // for(let i=0;i<10;i++){
-        //     let newLi = document.createElement("li");
-        //     newLi.textContent = `I am a list item ${i+1}`;
+        console.log(fragment);
+        console.log(div);
 
-        //     fragment.appendChild(newLi);
-        // }
+        let cache=[];
 
-        //  console.log(fragment.nodeType === Node.DOCUMENT_FRAGMENT_NODE);
-        // console.dir(fragment);
+        for(let i=0;i<10;i++){
+            let newLi = document.createElement("li");
+            newLi.textContent = `I am a list item ${i+1}`;
 
+            cache.push(newLi);
+        }
 
-
+         console.log(fragment.nodeType === Node.DOCUMENT_FRAGMENT_NODE);
+        console.dir(fragment);
 
 
     /*
