@@ -1,61 +1,100 @@
 const startButton = document.querySelector("#start");
-const hr = document.querySelector("#hr");
-const minute = document.querySelector("#minute");
-const second = document.querySelector("#second");
+const pauseButton = document.querySelector("#pause");
+const hrInput = document.querySelector("#hr");
+const minuteInput = document.querySelector("#minute");
+const secondInput = document.querySelector("#second");
 
 startButton.addEventListener("click",()=>{
 
-    const hrs= hr.value || 0;
-    const minutes = minute.value || 0;
-    const seconds= second.value|| 0; 
+    startButton.style.display="none";
+    pauseButton.style.display="block";
 
-    hr.value="00";
-    minute.value="00";
-    second.value="00";
+    const hrs= parseInt(hrInput.value) || 0;
+    const minutes =parseInt(minuteInput.value) || 0;
+    const seconds= parseInt(secondInput.value)|| 0; 
+
+    hrInput.value="00";
+    minuteInput.value="00";
+    secondInput.value="00";
 
 
-    let totalSeconds = parseInt(hrs)*3600 + parseInt(minutes) * 60 + parseInt(seconds);
 
 
-    let newMinutes = getMinutes(totalSeconds);
-    let newHours = getHours(totalSeconds);
-    let newSeconds = getSeconds(totalSeconds);
+    const {trasformedSecs, transformedMins, transformedHrs} = transFormInputs(seconds, minutes, hrs);
 
-    hr.value=newHours;
-    minute.value=newMinutes;
-    second.value=newSeconds;
+    secondInput.value = trasformedSecs;
+    minuteInput.value=transformedMins;
+    hrInput.value = transformedHrs;
 
-    timer(newSeconds);
+
+
+    let countDownTime = transformedHrs * 3600 + transformedMins * 60 + trasformedSecs;
+
+
+
+    timer(countDownTime);
 
 })
 
 
-function getMinutes(nSeconds){
 
-    return 5;
-}
 
-function getHours(nSeconds){
 
-    return 10;
-
-}
-
-function getSeconds(){
-    return 40;
-}
-
-function timer(secondsValue){
-
-    second.value=secondsValue;
-
-    if(secondsValue===0){
-      // we do check for minute 
+function transFormInputs(secs,mins,hrs){
+    return {
+        trasformedSecs:secs,
+        transformedMins:mins,
+        transformedHrs:hrs
     }
+
+}
+
+
+
+let stop=false;
+
+function timer(countDownTime){
+
+
+    countDownTime--;
+     updateUIEverySecond(countDownTime);
+
+    if(stop){
+        return;
+    }
+
+
     
     setTimeout(()=>{
-        timer(secondsValue-1);
+        timer(countDownTime);
     },1000)
-  
+}
+
+function updateUIEverySecond(countDownTime){
+
+    console.log(typeof countDownTime);
+
+    //1. countDownTime -> hrs:min:seconds 
+
+    let hrs= Math.floor(countDownTime/3600);
+    let mins = Math.floor((countDownTime%3600)/60);
+    let seconds = countDownTime % 60;
+
+        hrInput.value=hrs;
+         minuteInput.value=mins;
+         secondInput.value=seconds;
+
+        
+
+    if(hrs===0 && mins===0 && seconds===0){
+        stop=true;
+        return ;
+    }
+
 
 }
+
+
+pauseButton.addEventListener("click",()=>{
+    stop=true;
+})
