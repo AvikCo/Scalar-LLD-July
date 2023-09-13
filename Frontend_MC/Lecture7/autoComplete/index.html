@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css" >
+
+    <!-- Problem Statement 
+    Create a Autocomplete/ Typeahead 
+
+    Must Have
+
+    On  typing inside the search box, it should suggesr related terms 
+
+    use this API to fetch the data :
+    https://restcountries.com/v3.1/name/{name}
+
+    Good to Have 
+
+    * Search might be perfomant enough 
+    * it should avoid un-necessary network calls : caching , debouncing/throtling , 
+    atleast 2 characters should
+    * it should persist previously fethced data
+
+
+    ##Scoping 
+    * is there any design ? 
+    * Data source 
+            -> api-> get data from there 
+            -> use some local data -> promisify
+    * min numbers characters -> after which the first search should happen ? 
+
+    -->
+
+</head>
+<body>
+
+    <div class="autoComplete">
+
+        <h2> Auto Complete </h2>
+        <input type="text" class="searchInput"> 
+        <ul class="suggestionBox"> 
+        </ul>
+
+    </div>
+
+
+    <script src="fetchData.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
