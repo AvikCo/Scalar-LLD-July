@@ -18,8 +18,8 @@ async function getCountries(keyword){
 
     const rawResponse = await fetch(`https://restcountries.com/v3.1/name/${keyword}`,{
         signal:abbortController.signal
-    
     });
+
     console.log(rawResponse);
 
     // i have recieved the response
