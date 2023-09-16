@@ -153,6 +153,10 @@
 
 }
 
+.red{
+    color: red;
+}
+
 
 .active{
     border : 5px solid white;
