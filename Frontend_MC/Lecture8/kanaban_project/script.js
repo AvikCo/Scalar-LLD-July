@@ -9,6 +9,13 @@ const textarea = modal.querySelector(".textarea-cont")
 const prioritySetModal = modal.querySelector(".priority-color-cont");
 const priorityColorArray = prioritySetModal.querySelectorAll(".priority-color");
 const mainContainer = document.querySelector(".main");
+const containers = document.querySelectorAll(".container");
+
+const pendingContainer = document.querySelector(".pending-cont");
+const finishedContainer = document.querySelector(".finished-cont");
+
+
+
 let colors = ["pink","blue","purple","green"];
 
 let allTickets = localStorage.getItem("localTickets") || [];
@@ -26,7 +33,7 @@ function populateUI(){
     for(let i=0;i<allTickets.length;i++){
         let ticketObj = allTickets[i];
         console.log(ticketObj);
-         createNewTicket(ticketObj.content, ticketObj.color, ticketObj.id);
+         createNewTicket(ticketObj.content, ticketObj.color, ticketObj.id, ticketObj.isPending);
     }
     isFromLocalStorage=false;
 }
@@ -103,7 +110,7 @@ modal.addEventListener("keypress",(e)=>{
 
      const { randomUUID } = new ShortUniqueId({ length: 10 });
      const id = randomUUID();
-    createNewTicket(content,cColor,id);
+    createNewTicket(content,cColor,id,true);
     
 
 
@@ -129,7 +136,7 @@ prioritySetModal.addEventListener("click",(e)=>{
 
 
 
-function createNewTicket(content,color,id){
+function createNewTicket(content,color,id, isPending){
 
     const ticketContainer = document.createElement("div");
     ticketContainer.setAttribute("class","ticket-cont");
@@ -144,17 +151,25 @@ function createNewTicket(content,color,id){
             </div>
         `
 
-        mainContainer.appendChild(ticketContainer);
+        if(isPending===true){
+            pendingContainer.appendChild(ticketContainer)
+        }else{
+            finishedContainer.appendChild(ticketContainer)
+        }    
 
 
-        /*** store the ticket *****/
-        let ticketObj={
-            id:id,
-            content:content,
-            color:color
-        }
+
 
         if(!isFromLocalStorage){
+
+            /*** store the ticket  *****/
+            let ticketObj={
+                id:id,
+                content:content,
+                color:color,
+                isPending:isPending
+            }
+
             allTickets.push(ticketObj);
             updateInLocalStorage();
         }
@@ -231,3 +246,9 @@ function AddLockAndUnlock(lockBtn,ticketArea){
 function updateInLocalStorage(){
     localStorage.setItem("localTickets",JSON.stringify(allTickets));
 }
+
+
+
+
+
+
