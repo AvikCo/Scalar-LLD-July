@@ -1,5 +1,7 @@
 
 import MovieList from "./Components/MovieList/MovieList";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "./Components/Navbar/Navbar"
 
 function App(){
 
@@ -7,7 +9,7 @@ function App(){
 
   return(
     <div>
-       <h1> Welcome to Book My Show </h1>
+      <Navbar />
          <MovieList/>
     </div>
   ) 
