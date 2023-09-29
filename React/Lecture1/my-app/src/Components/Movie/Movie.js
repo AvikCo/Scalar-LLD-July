@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 
 function Movie(props){
@@ -13,6 +14,7 @@ function Movie(props){
     }
 
     return <div style={{height:"800px"}}>
+         <Link to={`/movie/${_id}`}>
          <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={posterUrl} />
       <Card.Body>
@@ -31,7 +33,7 @@ function Movie(props){
 
       </Card.Body>
     </Card>
-
+    </Link>
     </div>
 }
 
