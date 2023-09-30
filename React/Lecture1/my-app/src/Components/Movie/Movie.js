@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Movie(props){
 
-    const {movieDetails, onDelete} = props;
+    const {movieDetails, onDelete, isLoggedIn} = props;
     const {posterUrl, name, language, description,director,releaseDate,casts, _id} = movieDetails;
 
     function onMovieDelete(){
@@ -29,7 +29,11 @@ function Movie(props){
         <ListGroup.Item>Release Date {releaseDate}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-             <Button onClick={onMovieDelete} variant="danger">Delete Movie</Button>
+
+        {
+           isLoggedIn &&   <Button onClick={onMovieDelete} variant="danger">Delete Movie</Button>
+        }
+           
 
       </Card.Body>
     </Card>

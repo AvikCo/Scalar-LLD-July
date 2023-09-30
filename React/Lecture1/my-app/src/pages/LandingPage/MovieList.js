@@ -2,17 +2,22 @@ import { useEffect, useState } from "react";
 import Movie from "../../Components/Movie/Movie";
 import "./MovieList.css";
 import Spinner from "react-bootstrap/esm/Spinner";
+import NavbarComp from "../../Components/Navbar/Navbar";
+import { getAllMovies } from "../../api/movie";
+import DropDownComp from "../../Components/DropDown/DropDown";
+
     
 
 var moviesData=[];
 
 function MovieList(){
 
-    console.log("component rendered");
 
     const  [movieDetails, setMovieDetails] =  useState([]);
     const [ searchValue, setSearchValue] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+    const [isLoggedIn , setIsLoggedIn] =  useState(true);
+
 
 
     /**
@@ -20,23 +25,31 @@ function MovieList(){
      *  
      *    empty  dependencies : only on ComponentDidMount
      */
-    
-    useEffect(()=>{
-        console.log("useEffect triggered");
-        console.log("making a network call inside useEffect");
-        //make a network call to fetch the data
-        fetch("https://movie-booking-application.onrender.com/mba/api/v1/movies")
-        .then(res => res.json())
-        .then(movieData=>{
-            moviesData=movieData;
-            console.log(moviesData);
-            setIsLoading(false);
-            setMovieDetails(movieData);
+
+
+    const onLanguageChange=(selectedLanguage)=>{
+
+        if(selectedLanguage==="all"){
+            setMovieDetails(moviesData);
+            return;
+        }
+
+        const filteredMovies = moviesData.filter((movie)=>{
+            return movie.language.toLowerCase()===selectedLanguage;
         })
 
-        .catch(err=>{
-            console.log(err);
-        })
+      setMovieDetails(filteredMovies);       
+    }
+
+    const fetchMoviesData=async ()=>{
+       const movieData = await getAllMovies();
+      moviesData=movieData;
+      setIsLoading(false);
+      setMovieDetails(movieData);
+    }
+    
+    useEffect(()=>{
+        fetchMoviesData();     
     },[]);
 
 
@@ -44,8 +57,6 @@ function MovieList(){
        ComponentDidMount + everytime searchValue is updated 
     */
     useEffect(()=>{
-        console.log(moviesData);
-        console.log("useffect with dependency on searchValue triggered");
     // filter movies every time a searchValue state is changed 
     const filteredMovies = moviesData.filter((movie)=>{
         return movie.name.toLowerCase().startsWith(searchValue);
@@ -74,13 +85,17 @@ function MovieList(){
 
     return  <div className="movieListContainer">
 
+        <NavbarComp isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+
         {
             (isLoading) ?    <Spinner/> : <div>
                                         <input value={searchValue} onChange={onInputChange} type="text" placeholder="movieName"/>
+                                         <DropDownComp onLanguageChange={onLanguageChange}/> 
                                 <div className="movieList" >
                                         {
                                             movieDetails.map((movie)=>{
-                                                return <Movie key={movie._id} onDelete={onMovieDelete} movieDetails={movie} />
+                                                return <Movie key={movie._id} onDelete={onMovieDelete} movieDetails={movie}
+                                                 isLoggedIn={isLoggedIn} />
                                             })
 
                                         }
