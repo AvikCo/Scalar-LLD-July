@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        "use strict"
+
+        // memory leaks can be defined as memory that is not required by an application 
+        // anymore that for some reason is not returned to the operating system or the pool of free memory
+    
+
+        // b=15;
+
+        function abc(){
+            c= new Array(1000000);
+            b++;
+            c++;
+        }
+
+        abc();
+        /// 100000 lines later
+        
+        console.log(c);
+
+    </script>
+    
+</body>
+</html>

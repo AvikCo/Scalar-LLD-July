@@ -1,0 +1,23 @@
+.container{
+    border:3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.star_container{
+    padding:5px;
+    border:3px solid black;
+    display: flex;
+    gap:1rem;
+}
+
+.star{
+    font-size: 2rem;
+}
+
+.yellow{
+    color:#FFC300;
+}
