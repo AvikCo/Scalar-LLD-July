@@ -3,6 +3,8 @@
 
 // var a = 10;
 
+// fn()
+
 // function fn() {
 //     console.log("I am fn");
 //     function inner() {
@@ -11,7 +13,7 @@
 //     inner();
 // }
 
-// fn()
+
 
 
 // stack -> callstack
@@ -65,15 +67,21 @@
 
 
 function grandParent(){
+    
     var a=5;
 
-     parent();
+    parent();
 
+    
 
     function parent(){
+        
         var b=6;
 
         child();
+        console.log(a+b);
+
+      
 
         function child(){
 

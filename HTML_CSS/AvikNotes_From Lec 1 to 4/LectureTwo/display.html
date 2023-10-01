@@ -13,23 +13,35 @@
             /* border-top: 5px; */
             border-style: solid;
             border-color: red;
+            margin-bottom: 30px;
         }
         .inline {
             height: 500px; /*Height and width will not be applied to inline display type*/
             width: 500px;
-            margin:5px 10px; /* top and bottom margins will not be applied as its an inline element*/
+            margin:25px 30px; /*top and bottom margins will not be applied as its an inline element */
             border: 3px solid green;
-             padding: 10px; /*padding can be applied to inline element */
+            padding: 20px; /*padding can be applied to inline element */
         }
         .inlineBlock{
             display: inline-block;
             width: 250px;
             height: 300px;
             margin-top: 10px;
+            margin-bottom: 20px;
             border-top: 2px;
             border-color: red;
             border-style: solid;
             /* border: 3px solid red; */
+        }
+        .a2{
+            margin-top: 20px;
+            display: inline-block;
+            margin-left: 30px;
+            font-size: 32px;
+        }
+        .a1{
+            margin-right: 20px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -39,14 +51,26 @@
     </div>
     <!--span in an inline element-->
     <span class="inline"> 
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tenetur consequatur illum ipsa debitis ullam officia. Fuga pariatur perferendis nemo voluptatum, odit illo. Dolorem neque sed magnam inventore quis facilis.
+        INLINE ELEMENT Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tenetur consequatur illum ipsa debitis ullam officia. Fuga pariatur perferendis nemo voluptatum, odit illo. Dolorem neque sed magnam inventore quis facilis.
     </span>
     <span class="inlineBlock"> 
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi fuga quia ut? Totam atque quos velit dolor voluptatem labore distinctio. Velit beatae, architecto dicta non ad dolores. Delectus, repellendus ullam.
+       INLINE BLOCK Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi fuga quia ut? Totam atque quos velit dolor voluptatem labore distinctio. Velit beatae, architecto dicta non ad dolores. Delectus, repellendus ullam.
     </span>
+    <span class="inlineBlock"> 
+        INLINE BLOCK Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi fuga quia ut? Totam atque quos velit dolor voluptatem labore distinctio. Velit beatae, architecto dicta non ad dolores. Delectus, repellendus ullam.
+     </span>
     <span class="inline"> 
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, magni nostrum est voluptatibus veritatis vitae dignissimos fuga repudiandae dicta amet quod autem corrupti, minus iure?
     </span>
+    <br>
+    <div class="block a1">
+        <div>
+            hello world
+        </div>
+        A1
+    </div>
+    <div class="block a2">
+    </div>
 
 </body>
 </html>

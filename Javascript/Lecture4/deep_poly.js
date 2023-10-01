@@ -8,38 +8,57 @@ let person = {
         state: 'CA',
         country: 'USA'
     },
-    friends: ["Steve", "Nikola", "Ray", { name: "Jai", lastName: "Roy" }]
+    friends: ["Steve", "Nikola", "Ray", { name: "Jai", lastName: "Roy", courses: ['python', 'react', 'sql'] }]
 };
 
 
+// function clone(obj){
+
+//     let newObj={};
+
+//     for(let key in obj){
+
+//         if(typeof obj[key] === 'object'){
+
+//             let innerCopiedObj = clone(obj[key]);
+
+//             if(Array.isArray(obj[key])){
+//                 newObj[key]=Object.values(innerCopiedObj)
+//             }else{
+//             newObj[key]=innerCopiedObj;
+//             }
+//         }
+//         else{
+//            newObj[key]=obj[key];
+//         }
+//     }
+//     return newObj;
+// }
 function clone(obj){
-
-    let newObj={};
-
+    let newobj = {};
     for(let key in obj){
-
-        if(typeof obj[key] === 'object'){
-
-            let innerCopiedObj = clone(obj[key]);
-
+        if(typeof obj[key] === "object"){
+            let clonedObj  = clone(obj[key]);
             if(Array.isArray(obj[key])){
-                newObj[key]=Object.values(innerCopiedObj)
+                newobj[key] = Object.values(clonedObj);
             }else{
-            newObj[key]=innerCopiedObj;
+                newobj[key] = clonedObj;
             }
-        }
-        else{
-           newObj[key]=obj[key];
+        }else{
+            newobj[key] = obj[key];
         }
     }
-    return newObj;
+    return newobj;
 }
-
 
 let clonedPerson = clone(person);
 clonedPerson.friends[3].age=54;
+clonedPerson.friends[3].courses.push(".NET");
 console.log(person);
 console.log(clonedPerson);
+
+
+
 
 
 

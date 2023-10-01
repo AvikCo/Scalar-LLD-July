@@ -1,4 +1,4 @@
-.m1.m2{
+/* .m1.m2{
     background-color: green;
 }
 p.m1{
@@ -7,4 +7,20 @@ p.m1{
 a[target] {
     background-color: lightblue;
     color: red;
+} */
+*{
+    margin: 0px;
+    color:yellowgreen;
+}
+
+div>p{
+    text-transform: uppercase;
+    text-decoration: solid;
+    color: orange;
+}
+a{
+    color:red;
+}
+a[target]{
+    color:green
 }
