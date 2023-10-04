@@ -9,9 +9,14 @@ import MovieDetails from "./pages/MovieDetails/MovieDetails";
 import Bookings from "./pages/Bookings/Bookings";
 import MovieTheatres from "./pages/MovieTheatres/MovieTheatres";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import AuthHoc from "./hoc/AuthHOC";
+import CreateMovie from "./pages/CreateMovie/CreateMovie";
+import constants from "./utils/constants";
+
 
 function App(){
 
+  const roles = constants.roles;
   let name="Utkarsh";
   let initialValue="";
 
@@ -26,9 +31,10 @@ function App(){
         <Route path="/login" element={<Auth/>}/>
         <Route path="/signup" element={<Auth/>}/>
         <Route path="/" element={<MovieList/>}/>
-        <Route path="/movie/:movieId" element={<MovieDetails/>}/>
-        <Route path="/bookings" element={<Bookings/>}/>
-        <Route path="/theatres" element={<MovieTheatres/>}/>
+        <Route path="/movie/:movieId" element={ <MovieDetails/>}/>
+        <Route path="/bookings" element={<AuthHoc allowedRoles={roles.bothCustomerAndAdmin}   ><Bookings/></AuthHoc>}/>
+        <Route path="/theatres" element={  <AuthHoc allowedRoles={roles.bothCustomerAndAdmin} ><MovieTheatres/></AuthHoc>}/>
+        <Route path="/movies/add" element={  <AuthHoc allowedRoles={roles.onlyAdmin} ><CreateMovie/></AuthHoc>}/>
         <Route path="*" element={<PageNotFound/>} />
 
       </Routes>
