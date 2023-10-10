@@ -1,22 +1,25 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Movie from "../../Components/Movie/Movie";
 import "./MovieList.css";
 import Spinner from "react-bootstrap/esm/Spinner";
 import NavbarComp from "../../Components/Navbar/Navbar";
 import { getAllMovies } from "../../api/movie";
 import DropDownComp from "../../Components/DropDown/DropDown";
+import { ThemeContext } from "../../App";
 
     
 
 var moviesData=[];
 
-function MovieList(){
+function MovieList(props){
 
 
     const  [movieDetails, setMovieDetails] =  useState([]);
     const [ searchValue, setSearchValue] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [isLoggedIn , setIsLoggedIn] =  useState(true);
+    const {theme} = useContext(ThemeContext);
+
 
 
 
@@ -83,12 +86,14 @@ function MovieList(){
         
     }
 
-    return  <div className="movieListContainer">
+    console.log(theme);
+
+    return  <div className = {"movieListContainer text-center " + ((theme=="dark")?"bg-dark":"bg-light") } >
 
         <NavbarComp isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
         {
-            (isLoading) ?    <Spinner/> : <div>
+            (isLoading) ?    <Spinner/> : <div className="m-1">
                                         <input value={searchValue} onChange={onInputChange} type="text" placeholder="movieName"/>
                                          <DropDownComp onLanguageChange={onLanguageChange}/> 
                                 <div className="movieList" >

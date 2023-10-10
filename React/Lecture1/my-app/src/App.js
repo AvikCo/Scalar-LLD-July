@@ -12,6 +12,10 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import AuthHoc from "./hoc/AuthHOC";
 import CreateMovie from "./pages/CreateMovie/CreateMovie";
 import constants from "./utils/constants";
+import  { useState , createContext} from "react";
+
+export const LangContext = createContext();
+export const ThemeContext = createContext();
 
 
 function App(){
@@ -20,27 +24,45 @@ function App(){
   let name="Utkarsh";
   let initialValue="";
 
+  const [theme , setTheme] = useState("light");
+  const [language , setLanguage] = useState("english");
   
 
   return(
 
+     <ThemeContext.Provider value={{theme,setTheme}}>
     <Router>
 
       <Routes>
 
-        <Route path="/login" element={<Auth/>}/>
-        <Route path="/signup" element={<Auth/>}/>
+
+
+        <Route path="/login" element={<Auth />}/>
+        <Route path="/signup" element={<Auth />}/>
+
         <Route path="/" element={<MovieList/>}/>
-        <Route path="/movie/:movieId" element={ <MovieDetails/>}/>
-        <Route path="/bookings" element={<AuthHoc allowedRoles={roles.bothCustomerAndAdmin}   ><Bookings/></AuthHoc>}/>
-        <Route path="/theatres" element={  <AuthHoc allowedRoles={roles.bothCustomerAndAdmin} ><MovieTheatres/></AuthHoc>}/>
-        <Route path="/movies/add" element={  <AuthHoc allowedRoles={roles.onlyAdmin} ><CreateMovie/></AuthHoc>}/>
-        <Route path="*" element={<PageNotFound/>} />
+
+        <Route path="/movie/:movieId" element=
+        { 
+          <LangContext.Provider value={language}>
+        <MovieDetails />
+          </LangContext.Provider>
+        
+        }/>
+
+        <Route path="/bookings" element={<AuthHoc allowedRoles={roles.bothCustomerAndAdmin}   ><Bookings theme={theme}  /></AuthHoc>}/>
+        <Route path="/movies/add" element={  <AuthHoc allowedRoles={roles.onlyAdmin} ><CreateMovie theme={theme}/></AuthHoc>}/>
+        <Route path="/buyTickets/:movieId" element={  <AuthHoc allowedRoles={roles.bothCustomerAndAdmin} ><MovieTheatres theme={theme}/></AuthHoc>}/>
+        <Route path="/buyTickets/:movieId/:theatreId" element={  <AuthHoc allowedRoles={roles.bothCustomerAndAdmin} ><Bookings theme={theme}/></AuthHoc>}/>
+        <Route path="*" element={<PageNotFound theme={theme}/>} />
+
 
       </Routes>
 
 
     </Router>
+      </ThemeContext.Provider>
+
   
   ) 
 }
