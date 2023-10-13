@@ -3,6 +3,7 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeUserDetails } from './redux/actions/saveUserDetails';
 import Counter from './Counter';
+import Movies from './redux/Movies';
 
 function App() {
   console.log("rendering app component");
@@ -23,6 +24,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <Movies/>
 
       <hr/>
 
