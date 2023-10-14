@@ -6,6 +6,8 @@ import NavbarComp from "../../Components/Navbar/Navbar";
 import { getAllMovies } from "../../api/movie";
 import DropDownComp from "../../Components/DropDown/DropDown";
 import { ThemeContext } from "../../App";
+import Button from "react-bootstrap/esm/Button";
+import SearhInput from "../../Components/SearchInput/SearchInput";
 
     
 
@@ -13,9 +15,10 @@ var moviesData=[];
 
 function MovieList(props){
 
+    console.log("Movie List component rendered");
+
 
     const  [movieDetails, setMovieDetails] =  useState([]);
-    const [ searchValue, setSearchValue] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [isLoggedIn , setIsLoggedIn] =  useState(true);
     const {theme} = useContext(ThemeContext);
@@ -56,18 +59,18 @@ function MovieList(props){
     },[]);
 
 
-    /*
-       ComponentDidMount + everytime searchValue is updated 
-    */
-    useEffect(()=>{
-    // filter movies every time a searchValue state is changed 
-    const filteredMovies = moviesData.filter((movie)=>{
-        return movie.name.toLowerCase().startsWith(searchValue);
-    })
+    // /*
+    //    ComponentDidMount + everytime searchValue is updated 
+    // */
+    // useEffect(()=>{
+    // // filter movies every time a searchValue state is changed 
+    // // const filteredMovies = moviesData.filter((movie)=>{
+    // //     return movie.name.toLowerCase().startsWith(searchValue);
+    // // })
 
-    setMovieDetails(filteredMovies);
+    // // setMovieDetails(filteredMovies);
 
-    },[searchValue, isLoading])
+    // },[searchValue, isLoading])
 
 
        function onMovieDelete(id){
@@ -80,11 +83,15 @@ function MovieList(props){
     }
 
 
-    function onInputChange(e){
-        setSearchValue(e.target.value.toLowerCase());
-        
-        
+    const filterResults=(searchValue)=>{
+          const filteredMovies = moviesData.filter((movie)=>{
+        return movie.name.toLowerCase().startsWith(searchValue);
+    })
+
+    setMovieDetails(filteredMovies);
     }
+
+
 
     console.log(theme);
 
@@ -92,13 +99,16 @@ function MovieList(props){
 
         <NavbarComp isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
+        <SearhInput onSearchResults={filterResults}/>
+
         {
             (isLoading) ?    <Spinner/> : <div className="m-1">
-                                        <input value={searchValue} onChange={onInputChange} type="text" placeholder="movieName"/>
+           
                                          <DropDownComp onLanguageChange={onLanguageChange}/> 
                                 <div className="movieList" >
                                         {
                                             movieDetails.map((movie)=>{
+                                                console.log("re-rendering all the movies");
                                                 return <Movie key={movie._id} onDelete={onMovieDelete} movieDetails={movie}
                                                  isLoggedIn={isLoggedIn} />
                                             })

@@ -35,10 +35,9 @@ function App(){
 
       <Routes>
 
-
-
         <Route path="/login" element={<Auth />}/>
         <Route path="/signup" element={<Auth />}/>
+        {/* <Route path="/example" element={<Example />}/> */}
 
         <Route path="/" element={<MovieList/>}/>
 

@@ -2,12 +2,15 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
 
-function Movie(props){
+const Movie=memo(function Movie(props){
 
     const {movieDetails, onDelete, isLoggedIn} = props;
     const {posterUrl, name, language, description,director,releaseDate,casts, _id} = movieDetails;
+
+    console.log("movie component re rendered");
 
     function onMovieDelete(){
       onDelete(_id);
@@ -31,7 +34,13 @@ function Movie(props){
       <Card.Body>
 
         {
-           isLoggedIn &&   <Button onClick={onMovieDelete} variant="danger">Delete Movie</Button>
+           isLoggedIn &&   <Button className='m-1' onClick={onMovieDelete} variant="danger">Delete Movie</Button>
+
+        }
+
+        {
+            isLoggedIn &&   <Button className='m-1' onClick={onMovieDelete} variant="danger">Add  to Cart </Button>
+
         }
            
 
@@ -39,6 +48,6 @@ function Movie(props){
     </Card>
     </Link>
     </div>
-}
+})
 
 export default Movie;
