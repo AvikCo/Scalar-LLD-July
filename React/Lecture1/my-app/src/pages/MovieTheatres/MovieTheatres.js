@@ -1,36 +1,13 @@
-import { useEffect, useState } from "react";
-import { getTheatresForAMovie } from "../../api/theatre";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavbarComp from "../../Components/Navbar/Navbar";
 import SpinnerComp from "../../Components/common/Spinner/Spinner";
-import { getMovieDetails } from "../../api/movie";
+import useMovieTheatresHook from "../../hooks/useMovieTheatres";
 
 function MovieTheatres(){
 
-      const params = useParams();
-    const [isLoading,setIsLoading] = useState(true);
-    const [theatreDetails, setTheatreDetails] = useState(null);
-    const [movieDetails, setMovieDetails] = useState(null);
-    const movieId = params.movieId;
+    const {isLoading, movieDetails, theatreDetails, movieId} = useMovieTheatresHook();
 
-
-    const fetchData = async ()=>{
-
-    const [theatres, movieData] = await Promise.all([getTheatresForAMovie(movieId), getMovieDetails(movieId)]);
-
-      setTheatreDetails(theatres);
-      setMovieDetails(movieData);
-      setIsLoading(false);
-    }
-
-
-    useEffect(()=>{
-        fetchData();
-    },[])
-
-    
     return <div>
-
         <NavbarComp/>
 
         { isLoading && <SpinnerComp/>}
@@ -76,7 +53,9 @@ function MovieTheatres(){
         }
 
     </div>
-
 }
+
+
+
 
 export default MovieTheatres;

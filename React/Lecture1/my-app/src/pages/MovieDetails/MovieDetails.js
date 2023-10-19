@@ -1,36 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavbarComp from "../../Components/Navbar/Navbar";
 import Spinner from "../../Components/common/Spinner/Spinner";
-import { getMovieDetails } from "../../api/movie";
 import ReactPlayer from "react-player";
 import "./MovieDetails.css";
 import Button from "react-bootstrap/esm/Button";
-import { LangContext, ThemeContext } from "../../App";
+import useMovieDetails from "../../hooks/useMovieDetails";
 
 function MovieDetails(props){
 
-    const params = useParams();
-    const [isLoading,setIsLoading] = useState(true);
-    const [movieData, setMovieData] = useState(null);
-    const movieId = params.movieId;
-
-
-    const value = useContext(LangContext);
-    const {theme} = useContext(ThemeContext);
-    console.log(theme);
-
-
-    const  fetchMovieDetails = async ()=>{
-        const movieDetails = await getMovieDetails(movieId);
-        setIsLoading(false);
-        setMovieData(movieDetails);
-    }
-
-    useEffect(()=>{
-        fetchMovieDetails();
-
-    },[]);
+    const {isLoading, theme, movieData, movieId} = useMovieDetails();
 
 
     return <div className="">
@@ -88,11 +66,7 @@ function MovieDetails(props){
 
                 </div>
         }
-
-
-
     </div>
-
 }
 
 export default MovieDetails;

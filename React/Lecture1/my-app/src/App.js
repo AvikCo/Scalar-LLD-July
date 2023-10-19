@@ -1,18 +1,20 @@
-
-import MovieList from "./pages/LandingPage/MovieList";
+import  React, { useState , createContext, Suspense} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./Components/Navbar/Navbar"
 import UseEffectExamples from "./Components/useEffectExamples/useEffectExamples";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Auth from "./pages/Auth/Auth";
-import MovieDetails from "./pages/MovieDetails/MovieDetails";
-import Bookings from "./pages/Bookings/Bookings";
-import MovieTheatres from "./pages/MovieTheatres/MovieTheatres";
+// import MovieDetails from "./pages/MovieDetails/MovieDetails";
+
+
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import AuthHoc from "./hoc/AuthHOC";
-import CreateMovie from "./pages/CreateMovie/CreateMovie";
 import constants from "./utils/constants";
-import  { useState , createContext} from "react";
+import MovieList from "./pages/LandingPage/MovieList";
+const MovieTheatres = React.lazy(()=> import("./pages/MovieTheatres/MovieTheatres"));
+const MovieDetails = React.lazy(()=> import("./pages/MovieDetails/MovieDetails"));
+const Bookings = React.lazy(()=> import("./pages/Bookings/Bookings"));
+const CreateMovie = React.lazy(()=> import("./pages/CreateMovie/CreateMovie"));
 
 export const LangContext = createContext();
 export const ThemeContext = createContext();
@@ -31,6 +33,9 @@ function App(){
   return(
 
      <ThemeContext.Provider value={{theme,setTheme}}>
+      <Suspense fallback={<div style={{backgroundColor:"black", height:"100vh"}}> Loading your component ........... </div>}>
+
+
     <Router>
 
       <Routes>
@@ -60,6 +65,7 @@ function App(){
 
 
     </Router>
+          </Suspense>
       </ThemeContext.Provider>
 
   
