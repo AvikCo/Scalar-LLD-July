@@ -11,6 +11,11 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import AuthHoc from "./hoc/AuthHOC";
 import constants from "./utils/constants";
 import MovieList from "./pages/LandingPage/MovieList";
+import Counter from "./Components/Refs/Ref1";
+import Fragment from "./Components/Fragments/Fragment";
+import ErrorBoundries from "./Components/ErrorBoundries/ErrorBoundries";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./Components/ErrorFallback/ErrorFallback";
 const MovieTheatres = React.lazy(()=> import("./pages/MovieTheatres/MovieTheatres"));
 const MovieDetails = React.lazy(()=> import("./pages/MovieDetails/MovieDetails"));
 const Bookings = React.lazy(()=> import("./pages/Bookings/Bookings"));
@@ -33,6 +38,7 @@ function App(){
   return(
 
      <ThemeContext.Provider value={{theme,setTheme}}>
+
       <Suspense fallback={<div style={{backgroundColor:"black", height:"100vh"}}> Loading your component ........... </div>}>
 
 
@@ -58,6 +64,9 @@ function App(){
         <Route path="/movies/add" element={  <AuthHoc allowedRoles={roles.onlyAdmin} ><CreateMovie theme={theme}/></AuthHoc>}/>
         <Route path="/buyTickets/:movieId" element={  <AuthHoc allowedRoles={roles.bothCustomerAndAdmin} ><MovieTheatres theme={theme}/></AuthHoc>}/>
         <Route path="/buyTickets/:movieId/:theatreId" element={  <AuthHoc allowedRoles={roles.bothCustomerAndAdmin} ><Bookings theme={theme}/></AuthHoc>}/>
+        <Route path="/refs" element={ <Counter/>  } />
+        <Route path="/fragments" element={ <Fragment/>  } />
+          <Route path="/errorboundries" element={ <ErrorBoundries/>  } />
         <Route path="*" element={<PageNotFound theme={theme}/>} />
 
 
@@ -66,6 +75,7 @@ function App(){
 
     </Router>
           </Suspense>
+
       </ThemeContext.Provider>
 
   

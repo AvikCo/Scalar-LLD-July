@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StrictMode } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './Components/ErrorFallback/ErrorFallback';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+            <ErrorBoundary FallbackComponent={ErrorFallback} >
   <App />
+  </ErrorBoundary>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -24,6 +24,7 @@ function MovieList(props){
                                          <DropDownComp onLanguageChange={onLanguageChange}/> 
                                 <div className="movieList" >
                                         {
+                                            
                                             movieDetails.map((movie)=>{
                                                 console.log("re-rendering all the movies");
                                                 return <Movie key={movie._id} onDelete={onMovieDelete} movieDetails={movie}
