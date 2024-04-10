@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { StrictMode } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
-import ErrorFallback from './Components/ErrorFallback/ErrorFallback';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-            <ErrorBoundary FallbackComponent={ErrorFallback} >
-  <App />
-  </ErrorBoundary>
+  <Provider store={store} >
+    <App />
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

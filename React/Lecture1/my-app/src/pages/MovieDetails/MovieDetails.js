@@ -1,37 +1,22 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavbarComp from "../../Components/Navbar/Navbar";
 import Spinner from "../../Components/common/Spinner/Spinner";
-import { getMovieDetails } from "../../api/movie";
 import ReactPlayer from "react-player";
 import "./MovieDetails.css";
+import Button from "react-bootstrap/esm/Button";
+import useMovieDetails from "../../hooks/useMovieDetails";
 
-function MovieDetails(){
+function MovieDetails(props){
 
-    const params = useParams();
-    const [isLoading,setIsLoading] = useState(true);
-    const [movieData, setMovieData] = useState(null);
-    const movieId = params.movieId;
-
-
-    const  fetchMovieDetails= async ()=>{
-        const movieDetails = await getMovieDetails(movieId);
-        setIsLoading(false);
-        setMovieData(movieDetails);
-    }
-
-    useEffect(()=>{
-        fetchMovieDetails();
-
-    },[]);
+    const {isLoading, theme, movieData, movieId} = useMovieDetails();
 
 
-    return <div>
-        <NavbarComp/>
+    return <div className="">
+        <NavbarComp  />
         {
             (isLoading) ? <Spinner/> : <div>
 
-                <div className="box bg-black">
+                <div className={"box " +((theme==="dark")?"bg-black":"bg-light")}>
                     <ReactPlayer url={movieData.trailerUrl}  controls={true} width="80%" height="80%" />
                 </div>
 
@@ -66,18 +51,22 @@ function MovieDetails(){
                     <div className='text-center my-3' >
                     </div>
 
+                    <Link to={`/buyTickets/${movieId}`}>
+                          <Button className="text-white" variant="danger">
+                                    Book Tickets
+                    </Button>
+                    </Link>
+                  
                 </div>
+
+               
 
             </div>
         </div>
 
                 </div>
         }
-
-
-
     </div>
-
 }
 
 export default MovieDetails;
