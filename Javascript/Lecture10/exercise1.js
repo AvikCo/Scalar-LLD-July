@@ -8,7 +8,7 @@
 //     })
 // }
 
-// async function calculateResult(x){
+// async function calculateResult(x){ 
 //     try{
 //     const a1= await doubleAfter1Second(x);
 //     const a2= await doubleAfter1Second(a1);

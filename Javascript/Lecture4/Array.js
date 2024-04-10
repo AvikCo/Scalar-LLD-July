@@ -12,7 +12,6 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8];
 // // params -> starting index , delete count
 // let splicedArr = arr.splice(2, 4);
 
-
 //  console.log(slicedArr);
 // console.log(arr);
 // console.log(splicedArr);

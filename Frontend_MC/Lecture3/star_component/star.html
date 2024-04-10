@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 3px solid black;
+            gap: 1rem;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .heading{
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .star_container{
+            display: flex;
+            border: 1px solid black;
+            height: 3rem;
+            width: 13rem;
+            justify-content: center;
+            align-items: center;
+            gap: .6rem;
+            cursor: pointer;
+        }
+        .star{
+            font-size: 35px;
+        }
+        .count{
+            font-size: 1.5rem;
+        }
+        .yellow{
+            color: #FFC300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Provide Rating</div>
+        <div class="star_container">
+            <div class="star">&#9733;</div>
+            <div class="star">&#9733;</div>
+            <div class="star">&#9733;</div>
+            <div class="star">&#9733;</div>
+            <div class="star">&#9733;</div>
+        </div>
+        <div class="count">Review count: <span>0</span></div>
+    </div>
+</body>
+<Script src="star.js"></Script>
+</html>

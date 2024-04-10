@@ -27,50 +27,52 @@ console.log("value of ",myVar);
 
 
 // ********** number -> similar to mathematical  -> 64 bit floating values
-console.log(5/2);
+// console.log(5/2);
 
 
 // ********** string 
 
-var name="Utkarsh";
-var myName='Utkarsh';
-console.log(name);
-console.log(myName);
+// var name="Utkarsh";
+// var myName='Utkarsh';
+// console.log(name);
+// console.log(myName);
 
 // Problem : JS '' and "" doen't support multiple line strings;
 
-var age=29;
+// var age=29;
 
 
-let str2 = 'I am ' + age + " years old ";
-console.log(str2);
+// let str2 = 'I am ' + age + " years old "+
+// "\n My name is knan";
+// console.log(str2);
 
-let str1 = 'I am ' + age + " years old ";
-console.log(str1);
+// let str1 = 'I am ' + age + " years old ";
+// console.log(str1);
 
 
-let templateString = `I am
- ${age} years old`;
+// let templateString = `I am
+//  ${age} years old
+//  hey there`;
 
-console.log(templateString);
+// console.log(templateString);
 
 
 // ********** boolean 
 
-var isMarried = false;
+// var isMarried = false;
 
 
 
-// ********** null vs undefined
+// // ********** null vs undefined
 
-// null -> empty value -> user defined
-//undefined -> absense of defination  -> undefined -> js
+// // null -> empty value -> user defined
+// //undefined -> absense of defination  -> undefined -> js
 
-var totalRuns =  null;
-console.log(totalRuns);
+// var totalRuns =  null;
+// console.log(totalRuns);
 
 
-// ***********typeof Operator***********************
+// // ***********typeof Operator***********************
 
 var a = 10;
 console.log("a1", typeof a);
@@ -79,22 +81,22 @@ console.log("a2", typeof a);
 a = { "name": "Utkarsh" };
 console.log("a3", typeof a);
 
-// Fact-2 : JS -> just 10days -> netscape
+// // Fact-2 : JS -> just 10days -> netscape
 
-console.log(typeof null);
+// console.log(typeof null);
 
-var arr = [1,4,5,6,3,5,3,6,3];
+// var arr = [1,4,5,6,3,5,3,6,3];
 
-var person = {
-    name:"Utkarsh",
-    age:28
-}
+// var person = {
+//     name:"Utkarsh",
+//     age:28
+// }
 
-console.log(typeof person);
+// console.log(typeof person);
 
-console.log(arr);
-console.log(typeof arr);
+// console.log(arr);
+// console.log(typeof arr);
 
-// correct way to check whether you are recieving array or object
+// // correct way to check whether you are recieving array or object
 
-console.log(Array.isArray(person));
+// console.log(Array.isArray(person));

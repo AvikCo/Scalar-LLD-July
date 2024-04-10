@@ -1,6 +1,5 @@
 // high level view -> how your code exec
 
-
 // var a = 10;
 
 // fn()
@@ -91,4 +90,4 @@ function grandParent(){
     }
 }
 
-grandParent();
+// grandParent();

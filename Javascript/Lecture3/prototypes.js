@@ -5,9 +5,12 @@
 //     this.age=age;
 // }
 
+// console.log(Person.prototype)
+
 // Person.prototype.giveIntro=function(){
 //         console.log(`My name is ${this.name} and my age is ${this.age}`)
 // }
+// console.log(Person.prototype)
 
 
 // const person1= new Person("Utkarsh", 29);
@@ -40,7 +43,7 @@
 // let arr3 = new Array(6,5,3,6,3);
 // let arr4 = new Array(5,6,3,6,2,1);
 
-
+// arr1.sayHi();
 
 // console.log(arr1);
 
@@ -58,23 +61,23 @@
 // console.log(arr4.__proto__ === Array.prototype);
 
 
-console.log(typeof Object);
+// console.log(typeof Object);
 
 
 
-const obj1={
-    name:"Utkarsh"
-}
+// const obj1={
+//     name:"Utkarsh"
+// }
 
-const obj2={
-    name:"Utkarsh"
-}
-
-
-const obj3={
-    name:"Utkarsh"
-}
+// const obj2={
+//     name:"Utkarsh"
+// }
 
 
+// const obj3={
+//     name:"Utkarsh"
+// }
 
-console.log(obj1.__proto__ === Object.prototype);
+
+
+// console.log(obj1.__proto__ === Object.prototype);

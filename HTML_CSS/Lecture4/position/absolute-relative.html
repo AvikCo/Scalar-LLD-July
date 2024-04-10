@@ -74,9 +74,18 @@
             <div class="box box-3">3</div>
         </div>
         <div class="box box-4">4</div>
-
+        <button> Say Hello</button>
     </div>
 </body>
+<script>
+     const btnEl = document.querySelector("button")
+    const body = document.querySelector("body")
+    btnEl.addEventListener("click", (event)=> {
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "Hello"
+        body.appendChild(newDiv)
+    } )
+</script>
 
 </html>
 

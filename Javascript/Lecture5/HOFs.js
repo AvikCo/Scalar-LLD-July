@@ -10,6 +10,7 @@
 //     arr[i]=arr[i] * arr[i];
 // }
 
+
 // console.log(arr);
 
 

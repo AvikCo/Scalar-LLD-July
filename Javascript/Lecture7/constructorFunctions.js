@@ -7,7 +7,6 @@
 //     }
 // }
 
-
 // function SuperPerson(name, age){
 
 //     const person = new Person(name, age);

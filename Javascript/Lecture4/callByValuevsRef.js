@@ -1,14 +1,14 @@
 
 
-// let a = 5;
+let a = 5;
 
-// let b=a;
+let b=a;
 
-// b++;
+b++;
 
-// console.log(a);
-// console.log(b);
-
+console.log(a);
+console.log(b);
+   
 
 // let person1={
 //     name:"Utkarsh",

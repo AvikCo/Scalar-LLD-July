@@ -2,7 +2,7 @@
 
 function getUsers(cb){
     let users=[];
-    setTimeout(()=>{
+    setTimeout(()=>{  
         users=[
         {name:"Utkarsh",age:29},
         {name:"Rahul",age:30},

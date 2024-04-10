@@ -10,7 +10,8 @@ window.addEventListener("load", ()=>{
 async function handleSuggestions(e){
     const keyword = e.target.value;
     const response = await handleSearch(keyword);
-    populateSuggestionBox(response);
+    
+     (response);
 }
 
 

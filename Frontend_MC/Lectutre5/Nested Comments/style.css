@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+}
+.main_container{
+    margin-left: 2.5rem;
+    margin-top: 0.8rem;
+    
+    font-size: 1.2rem;
+    padding: 12px;
+    padding-top: 0;
+    padding-left: 10px;
+    border-left: 1px solid black;
+}
+.reply_btn{
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 7px;
+    margin-left: 19px;
+    font-size: 1rem;
+}
+.input_container{
+    margin-top: 10px;
+    margin-left: 19px;
+    display: none;
+}

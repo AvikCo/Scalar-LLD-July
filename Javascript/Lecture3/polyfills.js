@@ -73,14 +73,14 @@
 
 // console.dir(add.__proto__);
 
-const parent = {
-  health: 30,
-  addHealth(val){
-    this.health += val;
-  },
-  getCurrHealth(){
-    return this.health;
-  }
-}
-parent.addHealth(23);
-console.log(parent.health)
+// const parent = {
+//   health: 30,
+//   addHealth(val){
+//     this.health += val;
+//   },
+//   getCurrHealth(){
+//     return this.health;
+//   }
+// }
+// parent.addHealth(23);
+// console.log(parent.health)
