@@ -1,8 +1,7 @@
 let draggedTicket = null;
 
 containers.forEach((container)=>{
-
-
+    console.log(container)
     container.addEventListener("dragstart",(e)=>{
         e.target.style.opacity = "0.5";
         draggedTicket=e.target;
